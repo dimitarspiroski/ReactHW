@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BookConsumer } from "../context";
 import { useHistory } from "react-router-dom";
 
+// There is a book cover image for testing purposes of the form with path: :img/book-5.jpg". Any URL of an image should work too.
+
 export default function Form() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
