@@ -8,15 +8,15 @@ export default function Form() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [img, setImg] = useState("");
-  const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState("");
   const [info, setInfo] = useState("");
-  const [inStock, setInStock] = useState(null);
+  const [inStock, setInStock] = useState("");
   const history = useHistory();
 
   let textInput = null;
   useEffect(() => {
     textInput.focus();
-  }, []);
+  }, [textInput]);
 
   return (
     <BookConsumer>
@@ -31,11 +31,11 @@ export default function Form() {
               history.replace("/");
             }}
           >
-            <div class="form-group">
-              <label for="title-input">Title:</label>
+            <div className="form-group">
+              <label htmlFor="title-input">Title:</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="title-input"
                 aria-describedby="titleHelp"
                 placeholder="Enter title"
@@ -46,11 +46,11 @@ export default function Form() {
                 onChange={e => setTitle(e.target.value)}
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="author-input">Author:</label>
+            <div className="form-group mt-3">
+              <label htmlFor="author-input">Author:</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="author-input"
                 aria-describedby="authorHelp"
                 placeholder="Enter author name"
@@ -58,11 +58,11 @@ export default function Form() {
                 onChange={e => setAuthor(e.target.value)}
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="img-input">Image:</label>
+            <div className="form-group mt-3">
+              <label htmlFor="img-input">Image:</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="img-input"
                 aria-describedby="imgHelp"
                 placeholder="Enter image URL"
@@ -70,11 +70,11 @@ export default function Form() {
                 onChange={e => setImg(e.target.value)}
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="price-input">Price:</label>
+            <div className="form-group mt-3">
+              <label htmlFor="price-input">Price:</label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 id="price-input"
                 aria-describedby="priceHelp"
                 placeholder="Enter price"
@@ -82,11 +82,11 @@ export default function Form() {
                 onChange={e => setPrice(+e.target.value)}
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="itock-input">Stock:</label>
+            <div className="form-group mt-3">
+              <label htmlFor="itock-input">Stock:</label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 id="stock-input"
                 aria-describedby="stockHelp"
                 placeholder="Enter stock"
@@ -94,12 +94,12 @@ export default function Form() {
                 onChange={e => setInStock(+e.target.value)}
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="info-input">Info:</label>
+            <div className="form-group mt-3">
+              <label htmlFor="info-input">Info:</label>
               <textarea
                 type="text"
                 rows="5"
-                class="form-control"
+                className="form-control"
                 id="info-input"
                 aria-describedby="infoHelp"
                 placeholder="Enter info"
