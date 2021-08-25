@@ -8,6 +8,7 @@ export default function Form() {
   const [img, setImg] = useState("");
   const [price, setPrice] = useState(null);
   const [info, setInfo] = useState("");
+  const [inStock, setInStock] = useState(null);
   const history = useHistory();
 
   let textInput = null;
@@ -23,7 +24,7 @@ export default function Form() {
             className="mx-5 my-3"
             onSubmit={e => {
               e.preventDefault();
-              const book = { title, author, img, price, info };
+              const book = { title, author, img, price, inStock, info };
               value.addBook(book);
               history.replace("/");
             }}
@@ -77,6 +78,18 @@ export default function Form() {
                 placeholder="Enter price"
                 value={price}
                 onChange={e => setPrice(+e.target.value)}
+              />
+            </div>
+            <div class="form-group mt-3">
+              <label for="itock-input">Stock:</label>
+              <input
+                type="number"
+                class="form-control"
+                id="stock-input"
+                aria-describedby="stockHelp"
+                placeholder="Enter stock"
+                value={inStock}
+                onChange={e => setInStock(+e.target.value)}
               />
             </div>
             <div class="form-group mt-3">
